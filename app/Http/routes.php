@@ -21,6 +21,10 @@ Route::group(['namespace' => 'Auth'], function(){
     Route::get('/auth/login', [
         'uses' => 'AuthController@index'
     ]);
+
+    Route::post('/auth/login', [
+        'uses' => 'AuthController@postLogin'
+    ]);
 });
 
 Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function(){

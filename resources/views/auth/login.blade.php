@@ -2,9 +2,11 @@
 <html>
     <head>
         <title>缓存管理系统</title>
-        {!! HTML::style('packages/flat-ui/css/vendor/bootstrap.min.css') !!}
-        {!! HTML::style('packages/flat-ui/css/flat-ui.min.css') !!}
-        {!! HTML::script('packages/flat-ui/js/vendor/flat-ui.min.js') !!}
+        {!! CollectiveHTML::style('packages/flat-ui/css/vendor/bootstrap.min.css') !!}
+        {!! CollectiveHTML::style('packages/flat-ui/css/flat-ui.min.css') !!}
+        {!! CollectiveHTML::script('packages/flat-ui/js/vendor/jquery.min.js') !!}
+        {!! CollectiveHTML::script('packages/flat-ui/js/vendor/video.js') !!}
+        {!! CollectiveHTML::script('packages/flat-ui/js/flat-ui.min.js') !!}
         <style>
             html, body {
                 height: 100%;
@@ -39,13 +41,14 @@
         <div class="container">
             <div class="content">
                 <div class="title">cache manage system</div>
-                <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
+                @include('errors.list')
+                <form method="post" action="/auth/login">
 
                     <div class="login-form">
 
                         <div class="form-group">
 
-                            <input name="login_name" type="text" class="form-control login-field" value="" placeholder="Username" id="login-name" />
+                            <input name="name" type="text" class="form-control login-field" value="" placeholder="Username" id="login-name" />
 
                             <label class="login-field-icon fui-user" for="login-name"></label>
 
@@ -55,7 +58,7 @@
 
                         <div class="form-group">
 
-                            <input  name="login_password" type="password" class="form-control login-field" value="" placeholder="Password" id="login-pass" />
+                            <input  name="password" type="password" class="form-control login-field" value="" placeholder="Password" id="login-pass" />
 
                             <label class="login-field-icon fui-lock" for="login-pass"></label>
 

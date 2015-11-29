@@ -146,6 +146,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         //手动添加
+        Illuminate\Html\HtmlServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
 
     ],
@@ -198,9 +199,10 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
 
         //手动添加
-        'Form'		=> Collective\Html\FormFacade::class,
-        'HTML'		=> Collective\Html\HtmlFacade::class,
-
+        'Html'      => Illuminate\Html\HtmlFacade::class,
+        'Form'      => Illuminate\Html\FormFacade::class,
+        'CollectiveForm'		=> Collective\Html\FormFacade::class,
+        'CollectiveHTML'		=> Collective\Html\HtmlFacade::class,
     ],
 
 ];

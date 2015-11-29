@@ -37,4 +37,12 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    protected static function rules()
+    {
+        return [
+            'name' => 'required',
+            'password' => 'required'
+            ];
+    }
 }
